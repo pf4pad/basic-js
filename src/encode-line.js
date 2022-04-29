@@ -11,16 +11,16 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function encodeLine(str) {
-  const result = [];
+  const arr = [];
   for (let i = 0; i < str.length; i++) {
     let count = 1;
     while (str[i] === str[i + 1] && i < str.length) {
       count++, i++;
     }
     if (count > 1) {
-      result.push(count);
+      arr.push(count);
     }
-    result.push(str[i]);
+    arr.push(str[i]);
   }
   return result.join('');
 }
