@@ -22,7 +22,7 @@ function encodeLine(str) {
     }
     arr.push(str[i]);
   }
-  return result.join('');
+  return arr.join('');
 }
 
 module.exports = {
