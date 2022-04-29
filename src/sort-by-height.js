@@ -13,14 +13,9 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function sortByHeight(arr) {
 
-  let numbers = arr.filter((el) => el != -1);
-  numbers.sort((a, b) => b - a);
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== -1) {
-      arr[i] = numbers.pop();
-    }
-  }
-  return arr;
+  let newArr = arr.filter(item => item > 0)
+    .sort((a, b) => (a - b))
+  return arr.map(p => p > 0 ? newArr.shift() : p)
 }
 
 module.exports = {
