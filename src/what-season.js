@@ -20,23 +20,20 @@ function getSeason(date) {
     if (date.hasOwnProperty('getMonth')) {
       throw new Error();
     }
-    switch (date.getMonth() + 1) {
-      case 3:
-      case 4:
-      case 5:
-        return 'spring';
-      case 6:
-      case 7:
-      case 8:
-        return 'summer';
-      case 9:
-      case 10:
-      case 11:
-        return 'autumn';
-      case 12:
-      case 1:
-      case 2:
-        return 'winter';
+
+    let month = date.getMonth();
+
+    if (month >= 2 && month <= 4) {
+      return "spring";
+    }
+    if (month >= 5 && month <= 7) {
+      return "summer";
+    }
+    if (month >= 8 && month <= 10) {
+      return "autumn";
+    }
+    if (month == 11 || month == 0 || month == 1) {
+      return "winter";
     }
   }
   catch (error) {
